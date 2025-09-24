@@ -1,0 +1,1 @@
+export const nowFormatted = () => new Date().toLocaleString();

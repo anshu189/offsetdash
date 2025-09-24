@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --primarywhite: #f7f7f7;
+    --primaryblue: #2563EB;
+    --textblack: #1e1e1e;
+    --subtext: #626262;
+    --inputtext: #A9AFBA;
+    --activelight: #4ADE80;
+    --activedark: #277243;
+    --retiredlight: #F3F4F6;
+    --retireddark: #9CA3AF;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, span{
+    color: var(--textblack);
+}
+
+a:hover{
+    color: var(--primaryblue);
+}
+
