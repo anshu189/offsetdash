@@ -5,11 +5,11 @@ import CertificateDownloadButton from '../certificate/CertificateDownloadButton'
 const TableRow = React.memo(({ item }) => {
     return (
         <tr>
-            <td className="p-3">{item.unic_id}</td>
-            <td className="p-3">{item.project_name}</td>
-            <td className="p-3">{item.vintage}</td>
-            <td className="p-3"><Badge status={item.status} /></td>
-            <td className="p-3"><CertificateDownloadButton data={item} /></td>
+            <td className="px-6 py-4 text-sm font-mono whitespace-nowrap">{item.unic_id}</td>
+            <td className="px-6 py-4 text-sm">{item.project_name}</td>
+            <td className="px-6 py-4 text-sm whitespace-nowrap">{item.vintage}</td>
+            <td className="px-6 py-4 text-xs text-center whitespace-nowrap font-medium"><Badge status={item.status} /></td>
+            <td className="px-6 py-4 text-right text-md whitespace-nowrap"><CertificateDownloadButton data={item} /></td>
         </tr>
     );
 });

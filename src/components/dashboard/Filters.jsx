@@ -15,7 +15,7 @@ export default function Filters({ search, onSearch, year, onYearChange, status, 
                 <label className="block text-sm font-medium text-subtext mb-2">
                     Vintage Year
                 </label>
-                <select value={year} onChange={e => onYearChange(e.target.value)} className="p-3.5 border border-r-8 border-r-transparent rounded bg-primarywhite">
+                <select value={year} onChange={e => onYearChange(e.target.value)} className="p-3.5 border-r-8 border-r-transparent rounded bg-retiredlight">
                     <option value="All">All Years</option>
                     {years.map(y => <option key={y} value={y}>{y}</option>)}
                 </select>
@@ -25,14 +25,14 @@ export default function Filters({ search, onSearch, year, onYearChange, status, 
                 <label className="block text-sm font-medium text-subtext mb-2">
                     Status
                 </label>
-                <select value={status} onChange={e => onStatusChange(e.target.value)} className="p-3.5 border border-r-8 border-r-transparent rounded bg-primarywhite">
+                <select value={status} onChange={e => onStatusChange(e.target.value)} className="p-3.5 border-r-8 border-r-transparent rounded bg-retiredlight">
                     <option value="All">All status</option>
                     <option value="Active">Active</option>
                     <option value="Retired">Retired</option>
                 </select>
             </div>
 
-            <button onClick={onClear} className="md:basis-[10%] flex-shrink-0 md:mt-0 p-3 bg-[#f0f0f0] hover:bg-[#e6e6e6] rounded duration-300">Clear Filters</button>
+            <button onClick={onClear} className="md:basis-[10%] flex-shrink-0 md:mt-0 p-3 bg-retiredlight hover:bg-retireddark rounded duration-300">Clear Filters</button>
         </div>
     );
 }
