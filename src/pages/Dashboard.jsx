@@ -53,7 +53,8 @@ export default function Dashboard() {
             <div className="flex flex-col gap-2">
                 <CreditsTable data={paginated} />
                 <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
-                    <div>Showing {Math.min((page - 1) * PAGE_SIZE + 1, total)} to {Math.min(page * PAGE_SIZE, total)} of {total} results</div>
+                    {/* <div>Showing {Math.min((page - 1) * PAGE_SIZE + 1, total)} to {Math.min(page * PAGE_SIZE, total)} of {total} results</div> */}
+                    <div>Showing {paginated.length === 0 ? 0 : (page - 1) * PAGE_SIZE + 1} to {(page - 1) * PAGE_SIZE + paginated.length} of {total} results</div>
                     <Pagination page={page} setPage={setPage} totalPages={totalPages} maxVisible={5} />
                 </div>
             </div>
