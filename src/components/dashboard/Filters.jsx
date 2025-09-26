@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Filters({ search, onSearch, year, onYearChange, status, onStatusChange, years = [], onClear }) {
     return (
-        <div className="flex flex-col bg-white duration-300 p-6 rounded-xl border border-gray-200 md:flex-row md:items-end md:space-x-4 overflow-hidden shadow-sm">
+        <div className="flex flex-col gap-4 bg-white duration-300 p-6 rounded-xl border border-retireddark md:flex-row md:items-end md:space-x-4 overflow-hidden shadow-sm">
 
             <div className='flex flex-col basis-[60%] flex-shrink gap-1'>
                 <label className="block text-sm font-medium text-subtext mb-2">
@@ -32,7 +32,7 @@ export default function Filters({ search, onSearch, year, onYearChange, status, 
                 </select>
             </div>
 
-            <button onClick={onClear} className="md:basis-[10%] flex-shrink-0 md:mt-0 p-3 bg-retiredlight hover:bg-retireddark rounded duration-300">Clear Filters</button>
+            <button onClick={onClear} className="md:basis-[10%] flex-shrink-0 p-3 bg-retiredlight hover:bg-retireddark rounded duration-300">Clear Filters</button>
         </div>
     );
 }

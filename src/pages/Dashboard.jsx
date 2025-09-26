@@ -31,8 +31,8 @@ export default function Dashboard() {
     }), []);
 
     return (
-        <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div className='flex flex-col gap-4 items-stretch justify-center'>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <SummaryCard title="Total Credits" value={counts.total} />
                 <SummaryCard title="Active Credits" value={counts.active} />
                 <SummaryCard title="Retired Credits" value={counts.retired} />
@@ -49,9 +49,9 @@ export default function Dashboard() {
                 onClear={() => { setSearch(''); setYear('All'); setStatus('All'); }}
             />
 
-            <div className="mt-6">
+            <div className="flex flex-col gap-2">
                 <CreditsTable data={paginated} />
-                <div className="mt-4 flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
+                <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
                     <div>Showing {Math.min((page - 1) * PAGE_SIZE + 1, total)} to {Math.min(page * PAGE_SIZE, total)} of {total} results</div>
                     <div className="flex items-center space-x-2">
                         <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}

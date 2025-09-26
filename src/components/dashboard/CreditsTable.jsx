@@ -6,7 +6,7 @@ export default function CreditsTable({ data }) {
         return <div className="bg-white p-8 rounded shadow text-center">No credits found!</div>;
     }
     return (
-        <div className="bg-white border border-1 border-retiredlight rounded-lg shadow overflow-x-auto">
+        <div className="bg-white border border-1 border-retireddark rounded-lg overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                     <tr>

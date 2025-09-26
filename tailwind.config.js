@@ -12,7 +12,8 @@ export default {
         "activelight": "var(--activelight)",
         "activedark": "var(--activedark)",
         "retiredlight": "var(--retiredlight)",
-        "retireddark": "var(--retireddark)"
+        "retireddark": "var(--retireddark)",
+        "accentgreen": "var(--accentgreen)",
       },
     },
   },
