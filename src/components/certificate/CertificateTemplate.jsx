@@ -29,28 +29,32 @@ export default function CertificateTemplate({ credit, generatedAt }) {
             </div>
 
             {/* Certificate Details */}
-            <div className="grid grid-cols-2 gap-4 text-[10px] text-subtext my-2">
-                <div>
-                    <p className="font-semibold text-subtext uppercase">UNIC ID</p>
-                    <p className="font-mono font-medium">{credit.unic_id}</p>
+            <div className="grid grid-cols-2 gap-4 text-[10px] font-medium text-subtext my-2">
+                <div className="flex flex-col gap-6">
+                    <div>
+                        <p className="text-subtext uppercase">UNIC ID</p>
+                        <p className="font-mono">{credit.unic_id}</p>
+                    </div>
+                    <div>
+                        <p className="text-subtext uppercase">Vintage Year</p>
+                        <p>{credit.vintage}</p>
+                    </div>
                 </div>
-                <div>
-                    <p className="font-semibold text-subtext uppercase">Vintage Year</p>
-                    <p className="font-medium">{credit.vintage}</p>
-                </div>
-                <div>
-                    <p className="font-semibold text-subtext uppercase">Project Name</p>
-                    <p className="font-medium">{credit.project_name}</p>
-                </div>
-                <div>
-                    <p className="font-semibold text-subtext uppercase">Status</p>
-                    <p
-                        className={`font-medium ${isActive
-                            ? 'text-accentgreen'
-                            : 'text-textblack'
-                            }`}
-                    >{credit.status}
-                    </p>
+                <div className="flex flex-col gap-4 text-right">
+                    <div>
+                        <p className="text-subtext uppercase">Project Name</p>
+                        <p>{credit.project_name}</p>
+                    </div>
+                    <div>
+                        <p className="text-subtext uppercase">Status</p>
+                        <p
+                            className={`${isActive
+                                ? 'text-accentgreen'
+                                : 'text-textblack'
+                                }`}
+                        >{credit.status}
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -69,7 +73,7 @@ export default function CertificateTemplate({ credit, generatedAt }) {
                 </div>
             </div>
 
-            <hr className="my-2 border-retiredlight" />
+            <hr className="my-3 border-retiredlight" />
 
             <div className="text-center">
                 <p className="text-subtext text-[8px] italic">
