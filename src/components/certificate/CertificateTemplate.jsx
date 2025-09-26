@@ -29,24 +29,36 @@ export default function CertificateTemplate({ credit, generatedAt }) {
             </div>
 
             {/* Certificate Details */}
-            <div className="grid grid-cols-2 gap-4 text-[10px] font-medium text-subtext my-2">
-                <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-2 gap-96 text-[10px] font-medium text-subtext my-2">
+                <div className="flex flex-col gap-8">
                     <div>
-                        <p className="text-subtext uppercase">UNIC ID</p>
+                        <div className="flex items-center gap-1">
+                            <Hash className="h-2.5 w-2.5 text-accentgreen" />
+                            <p className="text-subtext uppercase">UNIC ID</p>
+                        </div>
                         <p className="font-mono">{credit.unic_id}</p>
                     </div>
                     <div>
-                        <p className="text-subtext uppercase">Vintage Year</p>
+                        <div className="flex items-center gap-1">
+                            <Calendar className="h-2.5 w-2.5 text-accentgreen" />
+                            <p className="text-subtext uppercase">Vintage Year</p>
+                        </div>
                         <p>{credit.vintage}</p>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 text-right">
+                <div className="flex flex-col gap-8">
                     <div>
-                        <p className="text-subtext uppercase">Project Name</p>
+                        <div className="flex items-center gap-1">
+                            <Leaf className="h-2.5 w-2.5 text-accentgreen" />
+                            <p className="text-subtext uppercase">Project Name</p>
+                        </div>
                         <p>{credit.project_name}</p>
                     </div>
                     <div>
-                        <p className="text-subtext uppercase">Status</p>
+                        <div className="flex items-center gap-1">
+                            <Award className="h-2.5 w-2.5 text-accentgreen" />
+                            <p className="text-subtext uppercase">Status</p>
+                        </div>
                         <p
                             className={`${isActive
                                 ? 'text-accentgreen'
@@ -61,7 +73,7 @@ export default function CertificateTemplate({ credit, generatedAt }) {
 
             <hr className="mt-10 border-retiredlight" />
 
-            {/* Footer */}
+            {/* Certificate Footer */}
             <div className="grid grid-cols-2 text-[10px] text-subetxt">
                 <div>
                     <p className="font-medium">Certificate Generated</p>

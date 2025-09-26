@@ -3,6 +3,7 @@ import data from '../data/credits.json';
 import SummaryCard from '../components/dashboard/SummaryCard';
 import Filters from '../components/dashboard/Filters';
 import CreditsTable from '../components/dashboard/CreditsTable';
+import Pagination from '../components/dashboard/Pagination';
 import useDebounce from '../hooks/useDebounce';
 import usePagination from '../hooks/usePagination';
 import { creditFilter } from '../utils/creditsfilter';
@@ -53,18 +54,7 @@ export default function Dashboard() {
                 <CreditsTable data={paginated} />
                 <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
                     <div>Showing {Math.min((page - 1) * PAGE_SIZE + 1, total)} to {Math.min(page * PAGE_SIZE, total)} of {total} results</div>
-                    <div className="flex items-center space-x-2">
-                        <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                            className="px-3 py-1 border rounded disabled:opacity-50">Prev</button>
-                        {Array.from({ length: totalPages }).map((_, i) => (
-                            <button key={i} onClick={() => setPage(i + 1)}
-                                className={`px-3 py-1 rounded ${page === i + 1 ? 'bg-blue-600 text-white' : 'bg-white border'}`}>
-                                {i + 1}
-                            </button>
-                        ))}
-                        <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                            className="px-3 py-1 border rounded disabled:opacity-50">Next</button>
-                    </div>
+                    <Pagination page={page} setPage={setPage} totalPages={totalPages} maxVisible={5} />
                 </div>
             </div>
         </div>
